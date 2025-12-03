@@ -1,5 +1,8 @@
+use_default_settings: true
+
 general:
   debug: false
+  instance_name: "SearXNG"
 
 server:
   secret_key: "maveric_secret_9834572345"
@@ -7,26 +10,22 @@ server:
   image_proxy: true
   public_instance: true
   http_protocol_version: "1.1"
-  base_url: "https://searxng-production-004f.up.railway.app/"
 
 ui:
   default_locale: "en"
 
 search:
+  safe_search: 0
+  autocomplete: ""
   formats:
     - html
     - json
-    - csv
 
 outgoing:
-  requests:
-    timeout: 10.0
+  request_timeout: 10.0
+  max_request_timeout: 15.0
 
-engines:
-  - name: google
-    disabled: false
-  - name: bing
-    disabled: true
-
-api:
-  enabled: true
+enabled_plugins:
+  - 'Hash plugin'
+  - 'Self Information'
+  - 'Tracker URL remover'
