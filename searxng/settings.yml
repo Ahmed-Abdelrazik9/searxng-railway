@@ -1,0 +1,32 @@
+general:
+  debug: false
+
+server:
+  secret_key: "maveric_secret_9834572345"
+  limiter: false
+  image_proxy: true
+  public_instance: true
+  http_protocol_version: "1.1"
+  base_url: "https://searxng-production-004f.up.railway.app/"
+
+ui:
+  default_locale: "en"
+
+search:
+  formats:
+    - html
+    - json
+    - csv
+
+outgoing:
+  requests:
+    timeout: 10.0
+
+engines:
+  - name: google
+    disabled: false
+  - name: bing
+    disabled: true
+
+api:
+  enabled: true
