@@ -1,0 +1,16 @@
+{
+  "$schema": "https://railway.app/schemas/project.json",
+  "services": {
+    "searxng": {
+      "build": {
+        "builder": "dockerfile",
+        "dockerfilePath": "Dockerfile"
+      },
+      "deploy": {
+        "startCommand": "/usr/local/bin/searxng",
+        "restartPolicyType": "on-failure",
+        "restartPolicyMaxRetries": 10
+      }
+    }
+  }
+}
