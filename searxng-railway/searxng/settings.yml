@@ -8,8 +8,13 @@ server:
   secret_key: "maveric_secret_9834572345"
   limiter: false
   image_proxy: true
-  public_instance: true
+  public_instance: false
   method: "GET"
+
+limiter:
+  enable: false
+
+redis: null
 
 search:
   safe_search: 0
