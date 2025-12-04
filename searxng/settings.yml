@@ -1,22 +1,248 @@
-use_default_settings: true
-
-general:
-  instance_name: "SearXNG"
+use_default_settings: false
 
 server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  base_url: ""
   secret_key: "3707c65c9311ab4f5675071536c1814219fd332fd352e71b43d4113918b813ee"
-  limiter: false
   image_proxy: false
-
-search:
-  formats:
-    - html
-    - json
+  limiter: false
+  debug: false
 
 ui:
-  default_locale: ""
+  default_theme: simple
+  results_on_new_tab: false
+  infinite_scroll: true
+  search_languages: all
+
+search:
+  safe_search: 0
+  autocomplete: "duckduckgo"
+  use_default_engines: false
+  formats: [html, json, rss]
+
+categories_as_tabs:
+  general: true
+  images: true
+  videos: true
+  files: true
+  music: true
+  science: true
+  news: true
+  it: true
+  torrents: true
+  adult: true
 
 engines:
+
+  # ───────── GENERAL SEARCH ─────────
   - name: duckduckgo
     engine: duckduckgo
     shortcut: ddg
+
+  - name: brave
+    engine: brave
+    shortcut: br
+    safesearch: 0
+
+  - name: google
+    engine: google
+    shortcut: g
+    safesearch: 0
+
+  - name: bing
+    engine: bing
+    shortcut: bng
+    safesearch: 0
+
+  - name: yahoo
+    engine: yahoo
+    shortcut: yh
+
+  - name: qwant
+    engine: qwant
+    shortcut: qw
+
+  # ───────── IMAGES ─────────
+  - name: google_images
+    engine: google_images
+    shortcut: gimg
+    safesearch: 0
+
+  - name: bing_images
+    engine: bing_images
+    shortcut: bimg
+    safesearch: 0
+
+  - name: brave_images
+    engine: brave_images
+    shortcut: brimg
+    safesearch: 0
+
+  - name: flickr
+    engine: flickr
+    shortcut: fl
+
+  - name: imgur
+    engine: imgur
+    shortcut: ig
+
+  # ───────── VIDEOS ─────────
+  - name: youtube
+    engine: youtube_noapi
+    shortcut: yt
+
+  - name: dailymotion
+    engine: dailymotion
+    shortcut: dm
+
+  - name: vimeo
+    engine: vimeo
+    shortcut: vm
+
+  # ───────── PORN / ADULT ─────────
+  - name: xvideos
+    engine: xvideos
+    shortcut: xv
+
+  - name: pornhub
+    engine: pornhub
+    shortcut: ph
+
+  - name: redtube
+    engine: redtube
+    shortcut: rt
+
+  - name: xhamster
+    engine: xhamster
+    shortcut: xh
+
+  - name: youporn
+    engine: youporn
+    shortcut: yp
+
+  - name: spankbang
+    engine: spankbang
+    shortcut: sb
+
+  - name: xnxx
+    engine: xnxx
+    shortcut: xx
+
+  # ───────── JAPANESE ADULT (JAV) ─────────
+  - name: javbus
+    engine: javbus
+    shortcut: jbus
+    timeout: 8
+
+  - name: javdb
+    engine: javdb
+    shortcut: jdb
+    timeout: 8
+
+  - name: javlibrary
+    engine: javlibrary
+    shortcut: javl
+    timeout: 8
+
+  - name: javmost
+    engine: javmost
+    shortcut: jmost
+    timeout: 8
+
+  - name: javguru
+    engine: javguru
+    shortcut: jguru
+    timeout: 8
+
+  - name: r18
+    engine: r18
+    shortcut: r18
+    timeout: 8
+
+  # ───────── TORRENTS ─────────
+  - name: piratebay
+    engine: piratebay
+    shortcut: tpb
+
+  - name: 1337x
+    engine: 1337x
+    shortcut: x1337
+
+  - name: torrentz
+    engine: torrentz
+    shortcut: tz
+
+  - name: nyaasi
+    engine: nyaasi
+    shortcut: ny
+
+  # ───────── FILE / PDF / DOCUMENT SEARCH ─────────
+  - name: github
+    engine: github
+    shortcut: gh
+
+  - name: gitlab
+    engine: gitlab
+    shortcut: gl
+
+  - name: sourceforge
+    engine: sourceforge
+    shortcut: sf
+
+  - name: academic_pdf
+    engine: generic
+    shortcut: pdf
+
+  # ───────── ACADEMIC SCIENCE ─────────
+  - name: arxiv
+    engine: arxiv
+    shortcut: ax
+
+  - name: semantic_scholar
+    engine: semantic_scholar
+    shortcut: ss
+
+  - name: crossref
+    engine: crossref
+    shortcut: cr
+
+  # ───────── NEWS ─────────
+  - name: reuters
+    engine: reuters
+    shortcut: rtnews
+
+  - name: apnews
+    engine: apnews
+    shortcut: apn
+
+  - name: guardian
+    engine: guardian
+    shortcut: grn
+
+  # ───────── IT / DEV ─────────
+  - name: stackoverflow
+    engine: stackoverflow
+    shortcut: so
+
+  - name: npm
+    engine: npm
+    shortcut: npmjs
+
+  - name: pypi
+    engine: pypi
+    shortcut: py
+
+  - name: dockerhub
+    engine: dockerhub
+    shortcut: dh
+
+redis:
+  url: ""
+  cache: false
+
+outgoing:
+  request_timeout: 10.0
+  useragent_suffix: ""
+  user_agent: "Mozilla/5.0 (X11; Linux x86_64)"
+  proxies: []
