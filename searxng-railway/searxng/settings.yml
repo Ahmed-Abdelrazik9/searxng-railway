@@ -1,14 +1,14 @@
 general:
   debug: false
-  instance_name: "SearXNG"
+  instance_name: "MySearXNG"
   contact_url: ""
   enable_metrics: false
   public_instance: false
 
 search:
-  safe_search: moderate
-  default_language: "en"
   autocomplete: "duckduckgo"
+  default_language: "en"
+  safe_search: moderate
   formats:
     - html
     - json
@@ -16,32 +16,50 @@ search:
 server:
   port: 8080
   bind_address: "0.0.0.0"
-  secret_key: "your-secret-key"
+  secret_key: "your-secret"
   limiter: false
   method: GET
   image_proxy: false
 
 ui:
   theme: simple
-  default_locale: en
+  default_locale: "en"
+  static_path: ""
+  templates_path: ""
+  infinite_scroll: false
 
 redis: {}
+
+categories:
+  general:
+    - general
+    - news
+  images:
+    - images
+  videos:
+    - videos
 
 engines:
   - name: duckduckgo
     engine: duckduckgo
     disabled: false
+    categories:
+      - general
+      - images
   
   - name: wikipedia
     engine: wikipedia
     disabled: false
+    categories:
+      - general
   
-  - name: bing
-    engine: bing
-    disabled: true
-  
-  - name: brave
-    engine: brave
-    disabled: true
+  - name: youtube
+    engine: youtube
+    disabled: false
+    categories:
+      - videos
 
-categories_as_tabs: true
+categories_as_tabs:
+  general: "Results"
+  images: "Images"
+  videos: "Videos"
