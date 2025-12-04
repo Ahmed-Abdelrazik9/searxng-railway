@@ -4,7 +4,7 @@ general:
   instance_name: "SearXNG"
 
 server:
-  secret_key: "ultrasecretkey"
+  secret_key: "3707c65c9311ab4f5675071536c1814219fd332fd352e71b43d4113918b813ee"
   limiter: false
   image_proxy: false
 
