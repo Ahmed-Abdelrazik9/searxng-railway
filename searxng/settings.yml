@@ -1,65 +1,22 @@
+use_default_settings: true
+
 general:
-  debug: false
-  instance_name: "MySearXNG"
-  contact_url: ""
-  enable_metrics: false
-  public_instance: false
+  instance_name: "SearXNG"
+
+server:
+  secret_key: "ultrasecretkey"
+  limiter: false
+  image_proxy: false
 
 search:
-  autocomplete: "duckduckgo"
-  default_language: "en"
-  safe_search: moderate
   formats:
     - html
     - json
 
-server:
-  port: 8080
-  bind_address: "0.0.0.0"
-  secret_key: "your-secret"
-  limiter: false
-  method: GET
-  image_proxy: false
-
 ui:
-  theme: simple
-  default_locale: "en"
-  static_path: ""
-  templates_path: ""
-  infinite_scroll: false
-
-redis: {}
-
-categories:
-  general:
-    - general
-    - news
-  images:
-    - images
-  videos:
-    - videos
+  default_locale: ""
 
 engines:
   - name: duckduckgo
     engine: duckduckgo
-    disabled: false
-    categories:
-      - general
-      - images
-  
-  - name: wikipedia
-    engine: wikipedia
-    disabled: false
-    categories:
-      - general
-  
-  - name: youtube
-    engine: youtube
-    disabled: false
-    categories:
-      - videos
-
-categories_as_tabs:
-  general: "Results"
-  images: "Images"
-  videos: "Videos"
+    shortcut: ddg
