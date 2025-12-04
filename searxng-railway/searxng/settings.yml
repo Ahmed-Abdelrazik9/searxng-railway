@@ -1,38 +1,47 @@
-use_default_settings: true
-
 general:
   debug: false
   instance_name: "SearXNG"
-
-server:
-  secret_key: "maveric_secret_9834572345"
-  limiter: false
-  image_proxy: true
+  contact_url: ""
+  enable_metrics: false
   public_instance: false
-  method: "GET"
-
-limiter:
-  enable: false
-
-redis: null
 
 search:
-  safe_search: 0
-  autocomplete: ""
-  default_lang: "en"
+  safe_search: moderate
+  default_language: "en"
+  autocomplete: "duckduckgo"
   formats:
     - html
     - json
 
-outgoing:
-  request_timeout: 10.0
-  max_request_timeout: 15.0
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "your-secret-key"
+  limiter: false
+  method: GET
+  image_proxy: false
 
-enabled_plugins:
-  - 'Hash plugin'
-  - 'Self Information'
-  - 'Tracker URL remover'
+ui:
+  theme: simple
+  default_locale: en
+
+redis: {}
 
 engines:
+  - name: duckduckgo
+    engine: duckduckgo
+    disabled: false
+  
+  - name: wikipedia
+    engine: wikipedia
+    disabled: false
+  
   - name: bing
+    engine: bing
     disabled: true
+  
+  - name: brave
+    engine: brave
+    disabled: true
+
+categories_as_tabs: true
