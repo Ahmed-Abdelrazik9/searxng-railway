@@ -1,183 +1,22 @@
-use_default_settings: false
+use_default_settings: true
+
+general:
+  instance_name: "SearXNG"
 
 server:
-  port: 8080
-  bind_address: "0.0.0.0"
-  base_url: ""
   secret_key: "3707c65c9311ab4f5675071536c1814219fd332fd352e71b43d4113918b813ee"
-  image_proxy: true
   limiter: false
-  debug: false
-
-ui:
-  default_theme: simple
-  results_on_new_tab: true
-  infinite_scroll: true
-  search_languages: all
-  default_locale: en
+  image_proxy: false
 
 search:
-  safe_search: 1
-  autocomplete: "duckduckgo"
-  use_default_engines: false
-  formats: [html, json]
+  formats:
+    - html
+    - json
 
-categories_as_tabs:
-  general: true
-  images: true
-  videos: true
-  files: true
-  news: true
-  science: true
-  it: true
-  social_media: true
-  map: true
-  music: true
+ui:
+  default_locale: ""
 
 engines:
-
-  # ───────── GENERAL ─────────
   - name: duckduckgo
     engine: duckduckgo
     shortcut: ddg
-
-  - name: brave
-    engine: brave
-    shortcut: br
-
-  - name: bing
-    engine: bing
-    shortcut: bng
-
-  - name: qwant
-    engine: qwant
-    shortcut: qw
-
-  - name: mojeek
-    engine: mojeek
-    shortcut: mj
-
-  - name: yahoo
-    engine: yahoo
-    shortcut: yh
-
-  - name: google
-    engine: google
-    shortcut: g
-
-  - name: wikipedia
-    engine: wikipedia
-    shortcut: wp
-
-  # ───────── IMAGES ─────────
-  - name: google_images
-    engine: google_images
-    shortcut: gimg
-
-  - name: bing_images
-    engine: bing_images
-    shortcut: bimg
-
-  - name: brave_images
-    engine: brave_images
-    shortcut: brimg
-
-  - name: qwant_images
-    engine: qwant_images
-    shortcut: qwimg
-
-  - name: wikimedia
-    engine: wikimedia_commons
-    shortcut: wmc
-
-  - name: pixabay
-    engine: pixabay
-    shortcut: px
-
-  - name: flickr
-    engine: flickr
-    shortcut: fl
-
-  # ───────── VIDEOS ─────────
-  - name: youtube
-    engine: youtube
-    shortcut: yt
-
-  - name: peertube
-    engine: peertube
-    shortcut: pt
-
-  - name: dailymotion
-    engine: dailymotion
-    shortcut: dm
-
-  - name: vimeo
-    engine: vimeo
-    shortcut: vm
-
-  - name: invidious
-    engine: invidious
-    shortcut: inv
-
-  # ───────── FILES / SCIENCE ─────────
-  - name: arxiv
-    engine: arxiv
-    shortcut: ax
-
-  - name: semantic_scholar
-    engine: semantic_scholar
-    shortcut: ss
-
-  - name: openlibrary
-    engine: openlibrary
-    shortcut: ol
-
-  - name: google_scholar
-    engine: google_scholar
-    shortcut: gs
-
-  # ───────── NEWS ─────────
-  - name: bing_news
-    engine: bing_news
-    shortcut: bnews
-
-  - name: google_news
-    engine: google_news
-    shortcut: gnews
-
-  - name: reddit
-    engine: reddit
-    shortcut: re
-
-  - name: hackernews
-    engine: hackernews
-    shortcut: hn
-
-  # ───────── IT / DEV ─────────
-  - name: stackoverflow
-    engine: stackoverflow
-    shortcut: so
-
-  - name: github
-    engine: github
-    shortcut: gh
-
-  # ───────── MAP ─────────
-  - name: openstreetmap
-    engine: openstreetmap
-    shortcut: osm
-
-  # ───────── MUSIC ─────────
-  - name: genius
-    engine: genius
-    shortcut: gn
-
-redis:
-  url: ""
-  cache: false
-
-outgoing:
-  request_timeout: 10.0
-  useragent_suffix: ""
-  user_agent: "Mozilla/5.0 (X11; Linux x86_64)"
-  proxies: []
